@@ -5,13 +5,13 @@ jobs:
     runs-on: macos-14
     steps:
     - run: |
-        brew install docker
+        brew install docker colima
         colima start
     - run: docker run --rm -ti ubuntu:jammy bash -c 'echo hi'
   main2:
     runs-on: macos-13
     steps:
     - run: |
-        brew install docker
+        brew install docker colima
         colima start
     - run: docker run --rm -ti ubuntu:jammy bash -c 'echo hi'
