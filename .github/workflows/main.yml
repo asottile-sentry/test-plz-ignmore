@@ -7,7 +7,7 @@ jobs:
       matrix:
         instance: [0, 1, 2, 3]
     steps:
-    - run: ip route get 1 | awk '{print $NF;exit}'
+    - run: ip route get 1
       if: matrix.instance == 0
     - run: echo worker
       if: matrix.instance != 0
