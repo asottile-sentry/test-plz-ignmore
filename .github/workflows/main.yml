@@ -3,15 +3,8 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        instance: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     steps:
-      - uses: getsentry/action-setup-venv@3a832a9604b3e1a4202ae559248f26867b467cc7 # v2.1.1
-        with:
-          python-version: 3.13.1
-          install-cmd: pip install psutil==5.9.7 -i https://pypi.devinfra.sentry.io/simple
       - run: |
           set -x
-          env | sort
-          python3 -c 'import psutil; print(sorted(psutil.Process().open_files()))'
+          echo ${{ github.job }}
+          jq . ${{ github.event_path }}
