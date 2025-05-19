@@ -4,6 +4,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
+      - uses: fscarmen/warp-on-actions@v1.3
       - run: |
           set -x
           ip -6 addr show scope global 
