@@ -2,7 +2,7 @@ on:
   push:
 jobs:
   main:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: fscarmen/warp-on-actions@v1.3
       - run: |
